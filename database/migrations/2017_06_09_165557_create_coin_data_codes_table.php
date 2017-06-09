@@ -17,8 +17,8 @@ class CreateCoinDataCodesTable extends Migration
             $table->increments('id');
             $table->string('uid', 6)->unique();
             $table->string('code', 20);
-            $table->integer('coin_data_id')->unsigned();
-            $table->integer('coin_data_provider')->unsigned();
+            $table->integer('coin_data_name_id')->unsigned();
+            $table->integer('coin_data_provider_id')->unsigned();
         });
     }
 
