@@ -177,6 +177,11 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
+        /*
+         * Custom App Service Providers
+         */
+        App\Providers\CoinDataServiceProvider::class
+
     ],
 
     /*
