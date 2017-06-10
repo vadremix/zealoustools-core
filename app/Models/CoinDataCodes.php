@@ -2,20 +2,17 @@
 
 namespace App\Models;
 
-use App\Models\CoinDataNames as Name;
-use App\Models\CoinDataProviders as Provider;
-
 use Illuminate\Database\Eloquent\Model;
 
 class CoinDataCodes extends Model
 {
     public function name()
     {
-        return $this->hasOne('Name');
+        return $this->belongsTo('App\Models\CoinDataNames', 'coin_data_name_id');
     }
 
     public function provider()
     {
-        return $this->hasOne('Provider');
+        return $this->belongsTo('App\Models\CoinDataProviders', 'coin_data_provider_id');
     }
 }
