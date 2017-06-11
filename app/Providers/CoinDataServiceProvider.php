@@ -2,18 +2,17 @@
 
 namespace App\Providers;
 
+use Illuminate\Cache\Repository as CacheRepository;
 use Illuminate\Support\ServiceProvider;
 
 class CoinDataServiceProvider extends ServiceProvider
 {
-    /**
-     * Bootstrap the application services.
-     *
-     * @return void
-     */
-    public function boot()
+
+    protected $cacheRepository;
+
+    public function boot(CacheRepository $cacheRepository)
     {
-        //
+        $this->cacheRepository = $cacheRepository;
     }
 
     /**
@@ -24,7 +23,7 @@ class CoinDataServiceProvider extends ServiceProvider
     public function register()
     {
         $this->app->bind('CoinDataService', function ($app) {
-            return new App\Classes\CoinDataService();
+            return new App\Classes\CoinDataService($this->cacheRepository);
         });
     }
 }
