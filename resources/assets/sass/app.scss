@@ -8,6 +8,10 @@
 // Bootstrap
 @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
 
+html, body {
+  min-height: 100%;
+}
+
 header {
   background-color: $hero-top-bg;
   color: $hero-top-color;
@@ -16,7 +20,7 @@ header {
 }
 
 header .brand {
-  padding-bottom: 10px;
+  border-bottom: 4px solid $hero-top-border;
   margin: 0 auto;
 
   display: inline-block;

@@ -1,13 +1,14 @@
 
 // Body
-$body-bg: #f5f8fa;
+$body-bg: #f1f3f4;
 
 // Hero
-$hero-top-bg: #63b3e9;
-$hero-top-color: #000;
-$hero-top-color-secondary: #3929a3;
-$hero-sub-1-bg: #2f8dbc;
-$hero-sub-2-bg: #288a2a;
+$hero-top-bg: #000;
+$hero-top-border: #80007f;
+$hero-top-color: #fff;
+$hero-top-color-secondary: #b200d6;
+$hero-sub-1-bg: #005f8f;
+$hero-sub-2-bg: #ad4200;
 
 // Borders
 $laravel-border-color: darken($body-bg, 10%);
