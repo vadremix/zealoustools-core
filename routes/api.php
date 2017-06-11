@@ -18,3 +18,4 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::get('coins/list', 'CoinDataApiController@list');
+Route::match(['get', 'post'], 'coins/prices', 'CoinDataApiController@getPrice');
