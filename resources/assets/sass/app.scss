@@ -1,9 +1,67 @@
 
 // Fonts
-@import url("https://fonts.googleapis.com/css?family=Raleway:300,400,600");
+@import url("https://fonts.googleapis.com/css?family=News+Cycle|Raleway:300,400,600");
 
 // Variables
 @import "variables";
 
 // Bootstrap
 @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+
+header {
+  background-color: $hero-top-bg;
+  color: $hero-top-color;
+  padding: 0;
+  text-align: center;
+}
+
+header .brand {
+  padding-bottom: 10px;
+  margin: 0 auto;
+
+  display: inline-block;
+}
+
+header small {
+  color: lighten($hero-top-color, 10%);
+}
+
+header .brand-secondary {
+  font-weight: bold;
+  color: $hero-top-color-secondary;
+}
+
+h1, h2, h3 {
+  font-family: "News Cycle", sans-serif;
+}
+
+header .hero-sub {
+  font-size: 20px;
+  padding: 20px;
+  color: #fff;
+  text-align: left;
+}
+
+header .hero-sub-1 {
+  background-color: $hero-sub-1-bg;
+}
+
+header .hero-sub-2 {
+  background-color: $hero-sub-2-bg;
+}
+
+@media (min-width: $screen-sm-min) {
+  header .brand {
+    text-align: left;
+    padding-left: 80px;
+  }
+
+  header .hero-sub {
+    padding: 15px 15px 15px 50px;
+  }
+
+  header .hero-sub-1 {
+    text-align: right;
+    padding-right: 50px;
+  }
+}

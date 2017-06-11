@@ -2,6 +2,13 @@
 // Body
 $body-bg: #f5f8fa;
 
+// Hero
+$hero-top-bg: #63b3e9;
+$hero-top-color: #000;
+$hero-top-color-secondary: #3929a3;
+$hero-sub-1-bg: #2f8dbc;
+$hero-sub-2-bg: #288a2a;
+
 // Borders
 $laravel-border-color: darken($body-bg, 10%);
 $list-group-border: $laravel-border-color;
@@ -15,6 +22,11 @@ $brand-info: #8eb4cb;
 $brand-success: #2ab27b;
 $brand-warning: #cbb956;
 $brand-danger: #bf5329;
+
+//** Global textual link color.
+$link-color:            #e5f6ff;
+$link-hover-color:      $link-color;
+$link-hover-decoration: underline !default;
 
 // Typography
 $icon-font-path: "~bootstrap-sass/assets/fonts/bootstrap/";
