@@ -38,8 +38,6 @@
         </div>
     </header>
 
-    <section class=""
-
     <script src="/js/app.js" rel="script"></script>
 </body>
 </html>
