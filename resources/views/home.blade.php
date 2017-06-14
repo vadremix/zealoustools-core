@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="/css/app.css">
 </head>
 <body>
-    <header>
+    <header id="app-header">
         <div class="container">
             <div class="row">
                 <div class="col-xs-12 brand">
@@ -37,6 +37,28 @@
             </div>
         </div>
     </header>
+
+    <section id="app-canvas">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-3">
+                    <app-tracker></app-tracker>
+                </div>
+                <div class="col-sm-3">
+                    <app-tracker></app-tracker>
+                </div>
+                <div class="col-sm-3">
+                    <app-tracker></app-tracker>
+                </div>
+                <div class="col-sm-3">
+                    <app-tracker></app-tracker>
+                </div>
+                <div class="col-sm-3">
+                    <app-tracker></app-tracker>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <script src="/js/app.js" rel="script"></script>
 </body>
