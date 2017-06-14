@@ -8,7 +8,6 @@ $hero-top-border: #575757;
 $hero-top-color: #fff;
 $hero-top-color-secondary: #b200d6;
 $hero-sub-1-bg: #005f8f;
-$hero-sub-2-bg: #ad4200;
 
 // Borders
 $laravel-border-color: darken($body-bg, 10%);
@@ -18,11 +17,21 @@ $panel-default-border: $laravel-border-color;
 $panel-inner-border: $laravel-border-color;
 
 // Brands
-$brand-primary: #3097D1;
+$brand-primary: #ad4200;
 $brand-info: #8eb4cb;
 $brand-success: #2ab27b;
 $brand-warning: #cbb956;
 $brand-danger: #bf5329;
+
+// Buttons
+$btn-primary-color:              #f5f5f5;
+$btn-primary-bg:                 $brand-primary;
+$btn-primary-border:             darken($brand-primary, 10%);
+
+// Allows for customizing button radius independently from global border radius
+$btn-border-radius-base:         1px;
+$btn-border-radius-large:        1px;
+$btn-border-radius-small:        1px;
 
 //** Global textual link color.
 $link-color:            #e5f6ff;

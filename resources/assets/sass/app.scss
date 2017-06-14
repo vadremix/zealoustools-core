@@ -60,7 +60,13 @@ header .hero-sub-1-inner {
 }
 
 header .hero-sub-2 {
-  //background-color: $hero-sub-2-bg;
+  text-align: center;
+}
+
+.btn-hero-sub {
+  font-size: 17px;
+  padding: 12px 18px;
+  transform: translateY(-10%);
 }
 
 @media (min-width: $screen-sm-min) {
@@ -83,7 +89,13 @@ header .hero-sub-2 {
   }
 
   header .hero-sub-2 {
-    text-align: center;
+    text-align: right;
+  }
+
+  .btn-hero-sub {
+    font-size: 18px;
+    transform: translateY(-10%);
+    padding: 6px 25px;
   }
 }
 

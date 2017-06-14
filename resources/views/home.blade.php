@@ -32,7 +32,7 @@
                     <div class="hero-sub-1-inner">12540000 USD</div>
                 </div>
                 <div class="col-xs-12 col-sm-4 hero-sub hero-sub-2">
-                    <a href="#">Suggest Feature</a>
+                    <btn class="btn btn-primary btn-hero-sub">Suggest Feature</btn>
                 </div>
             </div>
         </div>
