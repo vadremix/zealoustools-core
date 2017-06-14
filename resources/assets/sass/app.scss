@@ -20,7 +20,7 @@ header {
 }
 
 header .brand {
-  border-bottom: 2px solid $hero-top-border;
+  border-bottom: 2px ridge $hero-top-border;
   margin: 0 auto;
 
   display: inline-block;
@@ -40,32 +40,64 @@ h1, h2, h3 {
 }
 
 header .hero-sub {
-  font-size: 20px;
-  padding: 10px 20px;
+  font-size: 18px;
+  padding: 10px 30px;
   color: #fff;
   text-align: left;
 }
 
 header .hero-sub-1 {
-  background-color: $hero-sub-1-bg;
+  white-space: nowrap;
+}
+
+header .hero-sub-1-center {
+  padding-right: 60px;
+}
+
+header .hero-sub-1-inner {
+  float: right;
+  font-family: "News Cycle", sans-serif;
 }
 
 header .hero-sub-2 {
-  background-color: $hero-sub-2-bg;
+  //background-color: $hero-sub-2-bg;
 }
 
 @media (min-width: $screen-sm-min) {
   header .brand {
     text-align: left;
-    padding-left: 80px;
   }
 
   header .hero-sub {
-    padding: 15px 15px 15px 50px;
+    font-size: 18px;
+    padding: 15px;
+  }
+
+  header .hero-sub-1:first-of-type {
+    text-align: left;
   }
 
   header .hero-sub-1 {
     text-align: right;
-    padding-right: 50px;
+    padding-right: 0px;
+  }
+
+  header .hero-sub-2 {
+    text-align: center;
+  }
+}
+
+@media (min-width: $screen-md-min) {
+  header .hero-sub {
+    font-size: 20px;
+  }
+
+  header .hero-sub-1 {
+  }
+}
+
+@media (min-widh: $screen-lg-min) {
+  header .hero-sub-1 {
+    padding-right: 100px;
   }
 }

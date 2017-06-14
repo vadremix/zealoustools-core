@@ -11,7 +11,7 @@
 </head>
 <body>
     <header>
-        <div class="container-fluid">
+        <div class="container">
             <div class="row">
                 <div class="col-xs-12 brand">
                     @if (env('APP_NAME_SEG1') !== null && env('APP_NAME_SEG2') !== null)
@@ -23,13 +23,13 @@
             </div>
             <div class="row">
                 <div class="col-xs-4 col-sm-2 hero-sub hero-sub-1">
-                    Value:
+                    <span class="hidden-sm hidden-xs">Approximate </span>Value:
+                </div>
+                <div class="col-xs-4 col-sm-3 hero-sub hero-sub-1 hero-sub-1-center">
+                    <div class="hero-sub-1-inner">0 BTC</div>
                 </div>
                 <div class="col-xs-4 col-sm-3 hero-sub hero-sub-1">
-                    0 BTC
-                </div>
-                <div class="col-xs-4 col-sm-3 hero-sub hero-sub-1">
-                    0 USD
+                    <div class="hero-sub-1-inner">12540000 USD</div>
                 </div>
                 <div class="col-xs-12 col-sm-4 hero-sub hero-sub-2">
                     <a href="#">Suggest Feature</a>
@@ -37,6 +37,8 @@
             </div>
         </div>
     </header>
+
+    <section class=""
 
     <script src="/js/app.js" rel="script"></script>
 </body>
