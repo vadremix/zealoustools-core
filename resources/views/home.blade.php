@@ -41,6 +41,11 @@
     <section id="app-canvas">
         <div class="container">
             <div class="row">
+                <div class="col-sm-12">
+                    <h1>Portfolio Trackers</h1>
+                </div>
+            </div>
+            <div class="row">
                 <div class="col-sm-4 col-md-3">
                     <app-tracker></app-tracker>
                 </div>

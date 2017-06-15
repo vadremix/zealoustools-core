@@ -10,9 +10,11 @@ $hero-top-color-secondary: #b200d6;
 $hero-sub-1-bg: #005f8f;
 
 // Tracker
-$tracker-bg: #e6e6e6;
-$tracker-heading-color: #f0f0f0;
-$tracker-heading-bg: darken($hero-top-color-secondary, 20%);
+$tracker-bg: #e7e3e8;
+$tracker-heading-color: #525252;
+$tracker-heading-bg: darken($tracker-bg, 8%);
+
+$tracker-border-radius: 2px;
 
 // Borders
 $laravel-border-color: darken($body-bg, 10%);

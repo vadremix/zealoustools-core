@@ -73,6 +73,7 @@ header .hero-sub-2 {
 .tracker {
   background-color: $tracker-bg;
   margin: 5px 0 20px;
+  border-radius: $tracker-border-radius;
 }
 
 .tracker div, .tracker input {
@@ -85,7 +86,8 @@ header .hero-sub-2 {
   background-color: $tracker-heading-bg;
   color: $tracker-heading-color;
   margin: 0;
-  padding: 10px 15px;
+  padding: 8px 15px;
+  border-radius: $tracker-border-radius $tracker-border-radius 0 0;
 }
 
 .tracker .tracker-subtext {
@@ -95,6 +97,10 @@ header .hero-sub-2 {
 
 .tracker .tracker-input {
   margin-top: 5px;
+  margin-bottom: 3px;
+  border: 0;
+  font-family: "News Cycle", sans-serif;
+  padding-left: 10px;
 }
 
 .tracker .tracker-note {
