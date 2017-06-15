@@ -41,19 +41,19 @@
     <section id="app-canvas">
         <div class="container">
             <div class="row">
-                <div class="col-sm-3">
+                <div class="col-sm-4 col-md-3">
                     <app-tracker></app-tracker>
                 </div>
-                <div class="col-sm-3">
+                <div class="col-sm-4 col-md-3">
                     <app-tracker></app-tracker>
                 </div>
-                <div class="col-sm-3">
+                <div class="col-sm-4 col-md-3">
                     <app-tracker></app-tracker>
                 </div>
-                <div class="col-sm-3">
+                <div class="col-sm-4 col-md-3">
                     <app-tracker></app-tracker>
                 </div>
-                <div class="col-sm-3">
+                <div class="col-sm-4 col-md-3">
                     <app-tracker></app-tracker>
                 </div>
             </div>

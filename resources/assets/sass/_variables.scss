@@ -9,6 +9,11 @@ $hero-top-color: #fff;
 $hero-top-color-secondary: #b200d6;
 $hero-sub-1-bg: #005f8f;
 
+// Tracker
+$tracker-bg: #e6e6e6;
+$tracker-heading-color: #f0f0f0;
+$tracker-heading-bg: darken($hero-top-color-secondary, 20%);
+
 // Borders
 $laravel-border-color: darken($body-bg, 10%);
 $list-group-border: $laravel-border-color;
