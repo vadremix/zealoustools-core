@@ -28,12 +28,33 @@ const app = new Vue({
         coinData: []
     },
 
-    created: function() {
-        axios.get('/api/coins/list')
-            .then(function (response) {
-                app.coinData = response.data;
-            }).catch(function (response) {
-                return response;
+    methods: {
+        getPrices: function(coinUids) {
+            return axios.post('/api/coins/prices', {
+                coins: coinUids
             })
+                .then(function (response) {
+                    app.coinData = response.data;
+                }).catch(function (error) {
+                    return error;
+                })
+        },
+
+        getAllPrices: function() {
+            return axios.get('/api/coins/prices')
+                .then(function (response) {
+                    app.coinData = response.data;
+                }).catch(function (error) {
+                    return error;
+                })
+        }
+    },
+
+    created: function() {
+        if (this.coinSaved.length > 0) {
+            this.getPrices(this.coinSaved);
+        } else {
+            this.getAllPrices();
+        }
     }
 });
