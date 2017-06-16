@@ -47,10 +47,10 @@
             </div>
             <div class="row">
                 <div class="col-sm-4 col-md-3">
-                    <app-tracker></app-tracker>
+                    <app-tracker coin="Awjp27"></app-tracker>
                 </div>
                 <div class="col-sm-4 col-md-3">
-                    <app-tracker></app-tracker>
+                    <app-tracker coin="Awjp27"></app-tracker>
                 </div>
             </div>
         </div>

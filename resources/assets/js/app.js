@@ -21,5 +21,19 @@ window.Vue = require('vue');
 Vue.component('app-tracker', require('./components/Tracker.vue'));
 
 const app = new Vue({
-    el: '#app-canvas'
+    el: '#app-canvas',
+
+    data: {
+        coinSaved: ['Awjp27', 'LEc69S', 'cgSvK4'],
+        coinData: []
+    },
+
+    created: function() {
+        axios.get('/api/coins/list')
+            .then(function (response) {
+                app.coinData = response.data;
+            }).catch(function (response) {
+                return response;
+            })
+    }
 });

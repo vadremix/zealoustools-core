@@ -1,6 +1,6 @@
 <template>
     <div class="tracker">
-        <div class="tracker-heading">Bitcoin (BTC)</div>
+        <div class="tracker-heading">{{ coin }}</div>
         <div class="tracker-subtext">BTC: 1</div>
         <div class="tracker-subtext">USD: 2502.58</div>
         <div class="tracker-subtext">Apx. Value: 2502.58</div>
@@ -10,5 +10,7 @@
 </template>
 
 <script>
-
+    export default {
+        props: ['coin']
+    }
 </script>
