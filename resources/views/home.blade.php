@@ -46,12 +46,7 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-sm-4 col-md-3">
-                    <app-tracker coin="Awjp27"></app-tracker>
-                </div>
-                <div class="col-sm-4 col-md-3">
-                    <app-tracker coin="Awjp27"></app-tracker>
-                </div>
+                <app-tracker-box :coin-data="coinData"></app-tracker-box>
             </div>
         </div>
     </section>

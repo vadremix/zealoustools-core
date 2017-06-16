@@ -18,6 +18,7 @@ window.Vue = require('vue');
 
 // Vue.component('example', require('./components/Example.vue'));
 
+Vue.component('app-tracker-box', require('./components/TrackerBox.vue'));
 Vue.component('app-tracker', require('./components/Tracker.vue'));
 
 const app = new Vue({
