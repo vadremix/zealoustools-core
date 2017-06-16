@@ -52,15 +52,6 @@
                 <div class="col-sm-4 col-md-3">
                     <app-tracker></app-tracker>
                 </div>
-                <div class="col-sm-4 col-md-3">
-                    <app-tracker></app-tracker>
-                </div>
-                <div class="col-sm-4 col-md-3">
-                    <app-tracker></app-tracker>
-                </div>
-                <div class="col-sm-4 col-md-3">
-                    <app-tracker></app-tracker>
-                </div>
             </div>
         </div>
     </section>
