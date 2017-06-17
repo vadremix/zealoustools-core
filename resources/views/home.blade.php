@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="/css/app.css">
 </head>
 <body>
-<div class="app">
+<div id="app">
     <header id="app-header">
         <div class="container">
             <div class="row">
@@ -27,10 +27,16 @@
                     <span class="hidden-sm hidden-xs">Approximate </span>Value:
                 </div>
                 <div class="col-xs-4 col-sm-3 hero-sub hero-sub-1 hero-sub-1-center">
-                    <div class="hero-sub-1-inner">0 BTC</div>
+                    <div class="hero-sub-1-inner">
+                        <transition name="fade">
+                            <span v-cloak v-show="mounted">0</span>
+                        </transition> BTC</div>
                 </div>
                 <div class="col-xs-4 col-sm-3 hero-sub hero-sub-1">
-                    <div class="hero-sub-1-inner">12540000 USD</div>
+                    <div class="hero-sub-1-inner">
+                        <transition name="fade">
+                            <span v-cloak v-show="mounted">@{{ value }}</span>
+                        </transition> USD</div>
                 </div>
                 <div class="col-xs-12 col-sm-4 hero-sub hero-sub-2">
                     <btn class="btn btn-primary btn-hero-sub">Suggest Feature</btn>

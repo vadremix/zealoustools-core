@@ -26,7 +26,9 @@ const app = new Vue({
 
     data: {
         coinSaved: ['Awjp27', 'LEc69S', 'cgSvK4'],
-        coinData: []
+        coinData: [],
+        value: 0,
+        mounted: false
     },
 
     methods: {
@@ -57,5 +59,9 @@ const app = new Vue({
         } else {
             this.getAllPrices();
         }
+    },
+
+    mounted: function() {
+        this.mounted = true;
     }
 });

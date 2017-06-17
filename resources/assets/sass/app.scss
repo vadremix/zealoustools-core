@@ -118,6 +118,10 @@ header .hero-sub-2 {
   outline: none;
 }
 
+[v-cloak] {
+  display: none;
+}
+
 .fade-enter-active, .fade-leave-active {
   transition: opacity .3s
 }
