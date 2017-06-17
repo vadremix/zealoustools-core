@@ -1,7 +1,7 @@
 <template>
     <div>
         <div v-for="coin in coins" class="col-sm-4 col-md-3">
-            <app-tracker :coin="coin"></app-tracker>
+            <app-tracker :coin="coin" :visible="false"></app-tracker>
         </div>
     </div>
 </template>

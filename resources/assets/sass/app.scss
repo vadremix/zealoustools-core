@@ -108,6 +108,13 @@ header .hero-sub-2 {
   padding-bottom: 5px;
 }
 
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .3s
+}
+.fade-enter, .fade-leave-to {
+  opacity: 0
+}
+
 @media (min-width: $screen-sm-min) {
   header .brand {
     text-align: left;
