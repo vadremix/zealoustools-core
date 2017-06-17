@@ -22,7 +22,7 @@ Vue.component('app-tracker-box', require('./components/TrackerBox.vue'));
 Vue.component('app-tracker', require('./components/Tracker.vue'));
 
 const app = new Vue({
-    el: '#app-canvas',
+    el: '#app',
 
     data: {
         coinSaved: ['Awjp27', 'LEc69S', 'cgSvK4'],

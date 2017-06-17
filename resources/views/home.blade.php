@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="/css/app.css">
 </head>
 <body>
+<div class="app">
     <header id="app-header">
         <div class="container">
             <div class="row">
@@ -50,6 +51,7 @@
             </div>
         </div>
     </section>
+</div>
 
     <script src="/js/app.js" rel="script"></script>
 </body>
