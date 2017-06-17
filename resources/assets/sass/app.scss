@@ -108,6 +108,16 @@ header .hero-sub-2 {
   padding-bottom: 5px;
 }
 
+.input-danger {
+  background-color: #fcf7f7;
+  box-shadow: 0 0 2px #ff0000;
+  outline: none;
+}
+
+.input-danger:focus, .input-danger:active {
+  outline: none;
+}
+
 .fade-enter-active, .fade-leave-active {
   transition: opacity .3s
 }
