@@ -29,14 +29,16 @@
                 <div class="col-xs-4 col-sm-3 hero-sub hero-sub-1 hero-sub-1-center">
                     <div class="hero-sub-1-inner">
                         <transition name="fade">
-                            <span v-cloak v-show="mounted">0</span>
-                        </transition> BTC</div>
+                            <span v-cloak v-show="mounted">0 BTC</span>
+                        </transition>
+                    </div>
                 </div>
                 <div class="col-xs-4 col-sm-3 hero-sub hero-sub-1">
                     <div class="hero-sub-1-inner">
                         <transition name="fade">
-                            <span v-cloak v-show="mounted">@{{ value }}</span>
-                        </transition> USD</div>
+                            <span v-cloak v-show="mounted">@{{ value }} USD</span>
+                        </transition>
+                    </div>
                 </div>
                 <div class="col-xs-12 col-sm-4 hero-sub hero-sub-2">
                     <btn class="btn btn-primary btn-hero-sub">Suggest Feature</btn>
