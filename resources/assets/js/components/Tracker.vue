@@ -25,8 +25,7 @@
 
         methods: {
             value: function() {
-                console.log(this.amount);
-                if(!isNaN(this.amount)) {
+                if(!isNaN(this.amount) && this.amount >= 0) {
                     this.hasError = false;
                     return this.amount * this.coin.price;
                 } else {
