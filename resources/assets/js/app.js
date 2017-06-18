@@ -28,6 +28,7 @@ const app = new Vue({
         coinSaved: ['Awjp27', 'LEc69S', 'cgSvK4'],
         coinData: [],
         value: 0,
+        coinValues: {},
         mounted: false
     },
 
@@ -50,6 +51,18 @@ const app = new Vue({
                 }).catch(function (error) {
                     return error;
                 })
+        },
+
+        updateValues: function(coinValues) {
+            this.coinValues = coinValues;
+
+            var value = 0;
+
+            for(var coin in this.coinValues) {
+                value = value + this.coinValues[coin];
+            }
+
+            this.value = value;
         }
     },
 

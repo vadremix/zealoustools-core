@@ -1,7 +1,7 @@
 <template>
     <div>
         <div v-for="coin in coins" class="col-sm-4 col-md-3">
-            <app-tracker :coin="coin" :visible="false"></app-tracker>
+            <app-tracker :coin="coin" :visible="false" v-on:value-update="valueUpdate"></app-tracker>
         </div>
     </div>
 </template>
@@ -12,9 +12,18 @@
 
         data: function() {
             return {
-                coins: this.coinData
+                coins: this.coinData,
+                coinValues: {}
             }
         },
+
+        methods: {
+            valueUpdate: function(value) {
+                Object.assign(this.coinValues, value);
+                this.$emit('value-update', this.coinValues);
+            }
+        },
+
 
         watch: {
             coinData: function() {

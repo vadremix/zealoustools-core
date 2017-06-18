@@ -25,13 +25,22 @@
 
         methods: {
             value: function() {
+                var returnValue;
+                var eventValue = {};
+                var coinUid = this.coin.uid;
+
                 if(!isNaN(this.amount) && this.amount >= 0) {
                     this.hasError = false;
-                    return this.amount * this.coin.price;
+                    returnValue = this.amount * this.coin.price;
                 } else {
                     this.hasError = true;
-                    return 0;
+                    returnValue = 0;
                 }
+
+                eventValue[coinUid] = returnValue;
+
+                this.$emit('value-update', eventValue);
+                return returnValue;
             },
         },
 
