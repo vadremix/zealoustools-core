@@ -41,7 +41,7 @@
                     </div>
                 </div>
                 <div class="col-xs-12 col-sm-4 hero-sub hero-sub-2">
-                    <btn class="btn btn-primary btn-hero-sub">Suggest Feature</btn>
+                    <button class="btn btn-primary btn-hero-sub">Suggest Feature</button>
                 </div>
             </div>
         </div>
