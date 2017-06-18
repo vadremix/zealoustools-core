@@ -25,7 +25,8 @@ const app = new Vue({
     el: '#app',
 
     data: {
-        coinSaved: ['Awjp27', 'LEc69S', 'cgSvK4'],
+        coinSaved: {Awjp27: 0.8, LEc69S: 0, cgSvK4: 0},
+        coinList: [],
         coinData: [],
         value: 0,
         coinValues: {},
@@ -67,8 +68,12 @@ const app = new Vue({
     },
 
     created: function() {
-        if (this.coinSaved.length > 0) {
-            this.getPrices(this.coinSaved);
+        for(coin in this.coinSaved) {
+            this.coinList.push(coin);
+        }
+
+        if (this.coinList.length > 0) {
+            this.getPrices(this.coinList);
         } else {
             this.getAllPrices();
         }

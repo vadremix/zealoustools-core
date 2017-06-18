@@ -1,18 +1,19 @@
 <template>
     <div>
         <div v-for="coin in coins" class="col-sm-4 col-md-3">
-            <app-tracker :coin="coin" :visible="false" v-on:value-update="valueUpdate"></app-tracker>
+            <app-tracker :coin="coin" :visible="false" v-on:value-update="valueUpdate" :coins-loaded="coinsLoadedData"></app-tracker>
         </div>
     </div>
 </template>
 
 <script>
     export default {
-        props: ['coinData'],
+        props: ['coinData', 'coinsLoaded'],
 
         data: function() {
             return {
                 coins: this.coinData,
+                coinsLoadedData: this.coinsLoaded,
                 coinValues: {}
             }
         },

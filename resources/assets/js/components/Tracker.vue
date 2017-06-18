@@ -13,7 +13,7 @@
 
 <script>
     export default {
-        props: ['coin', 'visible'],
+        props: ['coin', 'visible', 'coinsLoaded'],
 
         data: function() {
             return {
@@ -42,6 +42,12 @@
                 this.$emit('value-update', eventValue);
                 return returnValue;
             },
+        },
+
+        watch: {
+            'coin.amount': function() {
+                console.log('hello');
+            }
         },
 
         mounted: function() {
