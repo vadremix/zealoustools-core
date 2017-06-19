@@ -40,6 +40,7 @@
                 eventValue[coinUid] = returnValue;
 
                 this.$emit('value-update', eventValue);
+                returnValue = returnValue.toLocaleString('en-US', { style: 'currency', currency: 'usd' });
                 return returnValue;
             },
         },

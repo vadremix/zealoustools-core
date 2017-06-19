@@ -28,7 +28,7 @@ const app = new Vue({
         coinSaved: {Awjp27: 0.8, LEc69S: 0, cgSvK4: 0},
         coinList: [],
         coinData: [],
-        value: 0,
+        value: new Intl.NumberFormat('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(0),
         coinValues: {},
         mounted: false
     },
@@ -63,7 +63,7 @@ const app = new Vue({
                 value = value + this.coinValues[coin];
             }
 
-            this.value = value;
+            this.value = value.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
         }
     },
 
