@@ -13,12 +13,12 @@
 
 <script>
     export default {
-        props: ['coin', 'visible', 'coinsLoaded'],
+        props: ['coin', 'visible'],
 
         data: function() {
             return {
                 seen: this.$props.visible,
-                amount: 0,
+                amount: this.coin.amount,
                 hasError: false
             }
         },

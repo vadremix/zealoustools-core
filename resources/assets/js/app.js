@@ -40,6 +40,16 @@ const app = new Vue({
             })
                 .then(function (response) {
                     app.coinData = response.data;
+
+                    var i = 0;
+                    var currentObject;
+
+                    for(var uid in app.coinSaved) {
+                        currentObject = app.coinData[i];
+                        currentObject['amount'] = app.coinSaved[uid];
+                        app.coinData[i] = currentObject;
+                        i++;
+                    }
                 }).catch(function (error) {
                     return error;
                 })
