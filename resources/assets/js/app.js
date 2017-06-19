@@ -29,6 +29,8 @@ const app = new Vue({
         coinSaved: {Awjp27: 0.8, LEc69S: 0, cgSvK4: 0},
         coinList: [],
         coinData: [],
+        // used for wizard
+        coinAll: [],
         trackerWizard: 1,
         value: new Intl.NumberFormat('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(0),
         coinValues: {},
@@ -97,5 +99,12 @@ const app = new Vue({
 
     mounted: function() {
         this.mounted = true;
+
+        axios.get('/api/coins/list')
+            .then(function (response) {
+                app.coinAll = response.data;
+            }).catch(function (error) {
+                return error;
+            })
     }
 });
