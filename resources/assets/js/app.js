@@ -29,6 +29,7 @@ const app = new Vue({
         coinSaved: {Awjp27: 0.8, LEc69S: 0, cgSvK4: 0},
         coinList: [],
         coinData: [],
+        trackerWizard: 1,
         value: new Intl.NumberFormat('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(0),
         coinValues: {},
         mounted: false
@@ -75,6 +76,10 @@ const app = new Vue({
             }
 
             this.value = value.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+        },
+
+        updateWizardStep: function(step) {
+            this.trackerWizard = step;
         }
     },
 
