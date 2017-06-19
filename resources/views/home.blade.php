@@ -55,6 +55,7 @@
                 </div>
             </div>
             <div class="row">
+                <app-tracker-add></app-tracker-add>
                 <app-tracker-box :coin-data="coinData" v-on:value-update="updateValues"></app-tracker-box>
             </div>
         </div>
