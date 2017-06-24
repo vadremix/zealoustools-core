@@ -14,7 +14,7 @@
                     <div class="tracker-body">
                         <input type="text" class="tracker-coin" placeholder="Select currency..." list="coins">
                         <datalist id="coins">
-                            <option v-for="coin in coinList">{{ coin.name }}</option>
+                            <option v-for="(coin, coinName) in coinListCat">{{ coinName }}</option>
                         </datalist>
                     </div>
                 </span>
@@ -34,6 +34,27 @@
 <script>
     export default {
         props: ['trackerWizard', 'coinList'],
+
+        data: function() {
+            return {
+                coinListCat: {}
+            }
+        },
+
+        watch: {
+            coinList: function() {
+                for(var i = 0; i < this.coinList.length; i++) {
+                    var coinItem = this.coinList[i];
+
+                    if(!this.coinListCat[coinItem.name]) {
+                        Vue.set(this.coinListCat, coinItem.name, {});
+                    }
+
+                    this.coinListCat[coinItem.name][coinItem.uid] =
+                        this.coinList[i].provider;
+                }
+            }
+        },
 
         methods: {
             step2: function() {
