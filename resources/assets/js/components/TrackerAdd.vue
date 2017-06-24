@@ -11,6 +11,12 @@
 
                 <span v-if="trackerWizard == 2" id="tracker-add-2">
                     <div class="tracker-heading text-center">Choose Currency</div>
+                    <div class="tracker-body">
+                        <input type="text" class="tracker-coin" placeholder="Select currency..." list="coins">
+                        <datalist id="coins">
+                            <option v-for="coin in coinList">{{ coin.name }}</option>
+                        </datalist>
+                    </div>
                 </span>
 
                 <span v-if="trackerWizard == 3" id="tracker-add-3">
@@ -27,7 +33,7 @@
 
 <script>
     export default {
-        props: ['trackerWizard'],
+        props: ['trackerWizard', 'coinList'],
 
         methods: {
             step2: function() {
