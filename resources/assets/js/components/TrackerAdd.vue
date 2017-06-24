@@ -47,11 +47,13 @@
                     var coinItem = this.coinList[i];
 
                     if(!this.coinListCat[coinItem.name]) {
-                        Vue.set(this.coinListCat, coinItem.name, {});
+                        Vue.set(this.coinListCat, coinItem.name, { uids: {}, codes: []});
                     }
 
-                    this.coinListCat[coinItem.name][coinItem.uid] =
+                    this.coinListCat[coinItem.name]['uids'][coinItem.uid] =
                         this.coinList[i].provider;
+
+                    this.coinListCat[coinItem.name]['codes'].push(coinItem.code);
                 }
             }
         },
