@@ -14,7 +14,7 @@
                     <div class="tracker-body">
                         <input type="text" class="tracker-coin" placeholder="Select currency..." list="coins">
                         <datalist id="coins">
-                            <option v-for="(coin, coinName) in coinListCat">{{ coinName }}</option>
+                            <option v-for="(coin, coinName) in coinListCat">{{ coinLongName(coinName) }}</option>
                         </datalist>
                     </div>
                 </span>
@@ -61,6 +61,11 @@
         methods: {
             step2: function() {
                 this.$emit('wizard-update', 2);
+            },
+
+            coinLongName: function(coinKey) {
+                // TODO: support multiple short codes (e.g. BTC, BTC2)
+                return coinKey + ' (' + this.coinListCat[coinKey]['codes'][0] + ')';
             }
         }
     }
