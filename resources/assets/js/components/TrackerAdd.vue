@@ -12,7 +12,7 @@
                 <span v-if="trackerWizard == 2" id="tracker-add-2">
                     <div class="tracker-heading text-center">Choose Currency</div>
                     <div class="tracker-body">
-                        <input type="text" class="tracker-coin" v-model="inputCoin" placeholder="Select currency..." list="coins">
+                        <input type="text" class="tracker-coin" :class="{ 'input-danger': inputDanger}" v-model="inputCoin" placeholder="Select currency..." list="coins">
                         <datalist id="coins">
                             <option v-for="(coin, coinName) in coinListCat">{{ coinLongName(coinName) }}</option>
                         </datalist>
@@ -88,7 +88,7 @@
             },
 
             stepComplete: function() {
-                if (this.inputValid = true) {
+                if (this.inputValid == true) {
                     // TODO: rewrite source selection
                     for(var key in this.coinListCat[this.testKey]['uids']) {
                         var uid = key;
@@ -98,7 +98,7 @@
                     // TODO: rewrite code/source selection
                     this.$emit('create-tracker', uid);
                 } else {
-                    this.inputDanger = false;
+                    this.inputDanger = true;
                 }
             },
 
