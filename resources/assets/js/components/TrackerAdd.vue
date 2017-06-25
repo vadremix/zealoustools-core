@@ -16,6 +16,9 @@
                         <datalist id="coins">
                             <option v-for="(coin, coinName) in coinListCat">{{ coinLongName(coinName) }}</option>
                         </datalist>
+                        <div class="tracker-create-button">
+                            <button @click="stepComplete">Create</button>
+                        </div>
                     </div>
                 </span>
 
@@ -39,7 +42,9 @@
             return {
                 coinListCat: {},
                 inputCoin: '',
-                inputValid: false
+                testKey: '',
+                inputValid: false,
+                inputDanger: false
             }
         },
 
@@ -60,14 +65,16 @@
             },
 
             inputCoin: function() {
+                this.inputDanger = false;
+
                 // match until '('
                 var pattern = /([^\(]*)/g;
                 var validationData = pattern.exec(this.inputCoin);
 
                 // remove ' ' that regex would've selected
-                var testKey = validationData[0].substr(0, validationData[0].length - 1);
+                this.testKey = validationData[0].substr(0, validationData[0].length - 1);
 
-                if(typeof this.coinListCat[testKey] !== 'undefined') {
+                if(typeof this.coinListCat[this.testKey] !== 'undefined') {
                     this.inputValid = true;
                 } else {
                     this.inputValid = false;
@@ -78,6 +85,21 @@
         methods: {
             step2: function() {
                 this.$emit('wizard-update', 2);
+            },
+
+            stepComplete: function() {
+                if (this.inputValid = true) {
+                    // TODO: rewrite source selection
+                    for(var key in this.coinListCat[this.testKey]['uids']) {
+                        var uid = key;
+                    }
+
+                    this.$emit('wizard-update', 1);
+                    // TODO: rewrite code/source selection
+                    this.$emit('create-tracker', uid);
+                } else {
+                    this.inputDanger = false;
+                }
             },
 
             coinLongName: function(coinKey) {
