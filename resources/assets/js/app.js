@@ -26,7 +26,7 @@ const app = new Vue({
     el: '#app',
 
     data: {
-        coinSaved: {Awjp27: 0.8},
+        coinSaved: {},
         coinList: [],
         coinData: [],
         // used for wizard
@@ -100,6 +100,8 @@ const app = new Vue({
 
         createTracker: function(uid) {
             Vue.set(this.coinSaved, uid, 0);
+
+            localStorage.setItem('coinSaved', JSON.stringify(this.coinSaved));
         }
     },
 
@@ -110,6 +112,8 @@ const app = new Vue({
     },
 
     created: function() {
+        this.coinSaved = JSON.parse(localStorage.getItem('coinSaved'));
+
         this.loadCoins();
     },
 
