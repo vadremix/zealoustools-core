@@ -26,7 +26,7 @@ const app = new Vue({
     el: '#app',
 
     data: {
-        coinSaved: {Awjp27: 0.8, LEc69S: 0, cgSvK4: 0},
+        coinSaved: {Awjp27: 0.8},
         coinList: [],
         coinData: [],
         // used for wizard
@@ -68,6 +68,20 @@ const app = new Vue({
                 })
         },
 
+        loadCoins: function() {
+            this.coinList = [];
+
+            for(coin in this.coinSaved) {
+                this.coinList.push(coin);
+            }
+
+            if (this.coinList.length > 0) {
+                this.getPrices(this.coinList);
+            } else {
+                this.getAllPrices();
+            }
+        },
+
         updateValues: function(coinValues) {
             this.coinValues = coinValues;
 
@@ -82,19 +96,21 @@ const app = new Vue({
 
         updateWizardStep: function(step) {
             this.trackerWizard = step;
+        },
+
+        createTracker: function(uid) {
+            Vue.set(this.coinSaved, uid, 0);
+        }
+    },
+
+    watch: {
+        coinSaved: function() {
+            this.loadCoins();
         }
     },
 
     created: function() {
-        for(coin in this.coinSaved) {
-            this.coinList.push(coin);
-        }
-
-        if (this.coinList.length > 0) {
-            this.getPrices(this.coinList);
-        } else {
-            this.getAllPrices();
-        }
+        this.loadCoins();
     },
 
     mounted: function() {

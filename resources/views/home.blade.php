@@ -55,7 +55,7 @@
                 </div>
             </div>
             <div class="row">
-                <app-tracker-add :tracker-wizard="trackerWizard" :coin-list="coinAll" v-on:wizard-update="updateWizardStep"></app-tracker-add>
+                <app-tracker-add :tracker-wizard="trackerWizard" :coin-list="coinAll" v-on:wizard-update="updateWizardStep" v-on:create-tracker="createTracker"></app-tracker-add>
                 <app-tracker-box :coin-data="coinData" v-on:value-update="updateValues"></app-tracker-box>
             </div>
         </div>
