@@ -12,7 +12,7 @@
                 <span v-if="trackerWizard == 2" id="tracker-add-2">
                     <div class="tracker-heading text-center">Choose Currency</div>
                     <div class="tracker-body">
-                        <input type="text" class="tracker-coin" placeholder="Select currency..." list="coins">
+                        <input type="text" class="tracker-coin" v-model="inputCoin" placeholder="Select currency..." list="coins">
                         <datalist id="coins">
                             <option v-for="(coin, coinName) in coinListCat">{{ coinLongName(coinName) }}</option>
                         </datalist>
@@ -37,7 +37,9 @@
 
         data: function() {
             return {
-                coinListCat: {}
+                coinListCat: {},
+                inputCoin: '',
+                inputValid: false
             }
         },
 
@@ -54,6 +56,21 @@
                         this.coinList[i].provider;
 
                     this.coinListCat[coinItem.name]['codes'].push(coinItem.code);
+                }
+            },
+
+            inputCoin: function() {
+                // match until '('
+                var pattern = /([^\(]*)/g;
+                var validationData = pattern.exec(this.inputCoin);
+
+                // remove ' ' that regex would've selected
+                var testKey = validationData[0].substr(0, validationData[0].length - 1);
+
+                if(typeof this.coinListCat[testKey] !== 'undefined') {
+                    this.inputValid = true;
+                } else {
+                    this.inputValid = false;
                 }
             }
         },
