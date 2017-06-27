@@ -97,6 +97,8 @@
                     this.$emit('wizard-update', 1);
                     // TODO: rewrite code/source selection
                     this.$emit('create-tracker', uid);
+
+                    this.inputCoin = '';
                 } else {
                     this.inputDanger = true;
                 }
