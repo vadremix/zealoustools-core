@@ -125,6 +125,23 @@ header .hero-sub-2 {
   font-weight: lighter;
 }
 
+.tracker-body .tracker-coin {
+  padding: 4px 10px;
+  margin: 25px 0;
+  width: 65%;
+  border: none;
+}
+
+.tracker-body .tracker-create-button {
+  width: 65%;
+  margin: 0 auto;
+}
+
+.tracker-body .tracker-create {
+  width: 100%;
+  padding: 4px 10px;
+}
+
 .input-danger {
   background-color: #fcf7f7;
   box-shadow: 0 0 2px #ff0000;

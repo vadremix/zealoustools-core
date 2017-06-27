@@ -11,13 +11,13 @@
 
                 <span v-if="trackerWizard == 2" id="tracker-add-2">
                     <div class="tracker-heading text-center">Choose Currency</div>
-                    <div class="tracker-body">
+                    <div class="tracker-body text-center">
                         <input type="text" class="tracker-coin" :class="{ 'input-danger': inputDanger}" v-model="inputCoin" placeholder="Select currency..." list="coins">
                         <datalist id="coins">
                             <option v-for="(coin, coinName) in coinListCat">{{ coinLongName(coinName) }}</option>
                         </datalist>
                         <div class="tracker-create-button">
-                            <button @click="stepComplete">Create</button>
+                            <button class="btn btn-info tracker-create" @click="stepComplete">Create</button>
                         </div>
                     </div>
                 </span>
