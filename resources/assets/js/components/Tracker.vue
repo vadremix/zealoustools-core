@@ -33,7 +33,7 @@
                     this.hasError = false;
                     returnValue = [];
                     returnValue.push(this.amount * this.coin.price);
-                    returnValue.push(parseInt(this.amount));
+                    returnValue.push(parseFloat(this.amount));
                 } else {
                     this.hasError = true;
                     returnValue = [0, 0];
