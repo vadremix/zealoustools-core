@@ -86,7 +86,7 @@ const app = new Vue({
             var value = 0;
 
             for(var coin in this.coinValues) {
-                value = value + this.coinValues[coin];
+                value = value + this.coinValues[coin][0];
             }
 
             this.value = value.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });

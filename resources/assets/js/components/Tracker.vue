@@ -31,16 +31,18 @@
 
                 if(!isNaN(this.amount) && this.amount >= 0) {
                     this.hasError = false;
-                    returnValue = this.amount * this.coin.price;
+                    returnValue = [];
+                    returnValue.push(this.amount * this.coin.price);
+                    returnValue.push(parseInt(this.amount));
                 } else {
                     this.hasError = true;
-                    returnValue = 0;
+                    returnValue = [0, 0];
                 }
 
                 eventValue[coinUid] = returnValue;
 
                 this.$emit('value-update', eventValue);
-                returnValue = returnValue.toLocaleString('en-US', { style: 'currency', currency: 'usd' });
+                returnValue = returnValue[0].toLocaleString('en-US', { style: 'currency', currency: 'usd' });
                 return returnValue;
             },
         },
