@@ -87,7 +87,10 @@ const app = new Vue({
 
             for(var coin in this.coinValues) {
                 value = value + this.coinValues[coin][0];
+                this.coinSaved[coin] = this.coinValues[coin][1];
             }
+
+            localStorage.setItem('coinSaved', JSON.stringify(this.coinSaved));
 
             this.value = value.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
         },
