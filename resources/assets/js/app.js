@@ -87,7 +87,9 @@ const app = new Vue({
 
             for(var coin in this.coinValues) {
                 value = value + this.coinValues[coin][0];
-                this.coinSaved[coin] = this.coinValues[coin][1];
+                if(coin in this.coinSaved) {
+                    this.coinSaved[coin] = this.coinValues[coin][1];
+                }
             }
 
             localStorage.setItem('coinSaved', JSON.stringify(this.coinSaved));
@@ -101,6 +103,12 @@ const app = new Vue({
 
         createTracker: function(uid) {
             Vue.set(this.coinSaved, uid, 0);
+
+            localStorage.setItem('coinSaved', JSON.stringify(this.coinSaved));
+        },
+
+        deleteTracker: function(uid) {
+            Vue.delete(this.coinSaved, uid);
 
             localStorage.setItem('coinSaved', JSON.stringify(this.coinSaved));
         }

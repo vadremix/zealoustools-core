@@ -1,7 +1,7 @@
 <template>
     <div>
         <div v-for="coin in coins" class="col-sm-4 col-md-3">
-            <app-tracker :coin="coin" :visible="false" v-on:value-update="valueUpdate"></app-tracker>
+            <app-tracker :coin="coin" :visible="false" v-on:value-update="valueUpdate" v-on:tracker-delete="deleteTracker"></app-tracker>
         </div>
     </div>
 </template>
@@ -22,6 +22,10 @@
             valueUpdate: function(value) {
                 Object.assign(this.coinValues, value);
                 this.$emit('value-update', this.coinValues);
+            },
+
+            deleteTracker: function(uid) {
+                this.$emit('tracker-delete', uid);
             }
         },
 

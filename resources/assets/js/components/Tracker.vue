@@ -13,7 +13,7 @@
 
             <div v-if="optionsToggle" class="tracker-options">
                 <ul>
-                    <li>Delete Tracker</li>
+                    <li @click="deleteTracker()">Delete Tracker</li>
                 </ul>
             </div>
         </div>
@@ -62,6 +62,11 @@
                 } else {
                     this.optionsToggle = true;
                 }
+            },
+
+            deleteTracker() {
+                this.$emit('tracker-delete', this.coin.uid);
+                this.optionsToggle = false;
             }
         },
 
