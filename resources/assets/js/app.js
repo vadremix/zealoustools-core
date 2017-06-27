@@ -77,8 +77,6 @@ const app = new Vue({
 
             if (this.coinList.length > 0) {
                 this.getPrices(this.coinList);
-            } else {
-                this.getAllPrices();
             }
         },
 
@@ -112,7 +110,9 @@ const app = new Vue({
     },
 
     created: function() {
-        this.coinSaved = JSON.parse(localStorage.getItem('coinSaved'));
+        if(saveData = localStorage.getItem('coinSaved')) {
+            this.coinSaved = JSON.parse(saveData);
+        }
 
         this.loadCoins();
     },
