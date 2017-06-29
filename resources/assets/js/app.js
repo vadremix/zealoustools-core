@@ -77,6 +77,8 @@ const app = new Vue({
 
             if (this.coinList.length > 0) {
                 this.getPrices(this.coinList);
+            } else {
+                this.coinData = [];
             }
         },
 
