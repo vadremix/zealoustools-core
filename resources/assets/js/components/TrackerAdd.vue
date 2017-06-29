@@ -74,7 +74,7 @@
                 var validationData = pattern.exec(this.inputCoin);
 
                 // remove ' ' that regex would've selected
-                this.testKey = validationData[0].substr(0, validationData[0].length - 1);
+                this.testKey = validationData[0].trim();
 
                 if(typeof this.coinListCat[this.testKey] !== 'undefined') {
                     this.inputValid = true;
