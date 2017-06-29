@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div v-for="coin in coins" class="col-sm-4 col-md-3">
+        <div v-for="coin in coins" :key="coin.uid" class="col-sm-4 col-md-3">
             <app-tracker :coin="coin" :visible="false" v-on:value-update="valueUpdate" v-on:tracker-delete="deleteTracker"></app-tracker>
         </div>
     </div>
