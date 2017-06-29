@@ -70,12 +70,6 @@
             }
         },
 
-        watch: {
-            'coin.amount': function() {
-                console.log('hello');
-            }
-        },
-
         mounted: function() {
             this.$data.seen = true;
         }

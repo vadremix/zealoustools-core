@@ -112,6 +112,10 @@ const app = new Vue({
         deleteTracker: function(uid) {
             Vue.delete(this.coinSaved, uid);
 
+            setTimeout(function() {
+                Vue.set(app.coinValues[uid], 0, 0);
+            }, 50);
+
             localStorage.setItem('coinSaved', JSON.stringify(this.coinSaved));
         }
     },
