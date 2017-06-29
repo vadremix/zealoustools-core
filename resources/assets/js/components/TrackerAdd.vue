@@ -13,7 +13,7 @@
                     <div class="tracker-heading text-center">Choose Currency</div>
                     <div class="tracker-body text-center">
                         <form action="javascript:void(0);">
-                            <input type="text" class="tracker-coin" :class="{ 'input-danger': inputDanger}" v-model="inputCoin" placeholder="Select currency..." list="coins" autofocus>
+                            <input type="text" class="tracker-coin" :class="{ 'input-danger': inputDanger}" v-model="inputCoin" placeholder="Select currency..." list="coins" ref="selection" autofocus>
                             <datalist id="coins">
                                 <option v-for="(coin, coinName) in coinListCat">{{ coinLongName(coinName) }}</option>
                             </datalist>
@@ -80,6 +80,16 @@
                     this.inputValid = true;
                 } else {
                     this.inputValid = false;
+                }
+            },
+
+            trackerWizard: function() {
+                if(this.trackerWizard == 2) {
+                    var refs = this.$refs;
+
+                    Vue.nextTick(function() {
+                        refs.selection.focus();
+                    });
                 }
             }
         },
