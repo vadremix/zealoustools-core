@@ -31,11 +31,7 @@ class CoinMarketCapAdapter extends CoinDataAdapterAbstract
         if ($this->cacheRepository->has(get_class())) { // dummy comparison
             return true;
         } else {
-            if ($this->getData(true)) {
-                $this->getData();
-            } else {
-                return false;
-            };
+            return $this->getData(true);
         }
     }
 
@@ -60,7 +56,7 @@ class CoinMarketCapAdapter extends CoinDataAdapterAbstract
 
             $this->cacheRepository->put(get_class(), $data, 5);
 
-            return true;
+            return $data;
         }
     }
 }
