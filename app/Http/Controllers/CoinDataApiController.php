@@ -76,7 +76,7 @@ class CoinDataApiController extends Controller
         foreach ($providersList as $provider) {
             $coinDataAdapter = $this->coinDataService->createProvider($provider);
 
-            foreach ($providerGroups['Dummy'] as $coin) {
+            foreach ($providerGroups[$provider] as $coin) {
                 $coin['price'] = $coinDataAdapter->getPrice($coin['code']);
 
                 $coinsValued[] = $coin;

@@ -4,6 +4,7 @@ namespace App\Classes\CoinDataAdapters;
 
 use Illuminate\Cache\Repository as CacheRepository;
 use GuzzleHttp;
+use Mockery\Exception;
 
 class CoinMarketCapAdapter extends CoinDataAdapterAbstract
 {
@@ -18,20 +19,23 @@ class CoinMarketCapAdapter extends CoinDataAdapterAbstract
 
     public function getPrice(String $coinCode)
     {
-        // TODO: Implement getPrice() method.
+        $data = $this->getData();
+        $price = $data[$coinCode]->price_usd;
 
-        $this->cacheLayer();
+        return $price;
     }
 
     public function cacheLayer()
     {
-        // TODO: Implement cacheLayer() method.
-
         // if cache is valid return true
-        if ('a' == 'b') { // dummy comparison
+        if ($this->cacheRepository->has(get_class())) { // dummy comparison
             return true;
         } else {
-            $this->getData(true);
+            if ($this->getData(true)) {
+                $this->getData();
+            } else {
+                return false;
+            };
         }
     }
 
@@ -39,10 +43,24 @@ class CoinMarketCapAdapter extends CoinDataAdapterAbstract
     {
         if ($refreshCache == false) {
             if ($this->cacheLayer()) {
-                // return data from cache
+                return $this->cacheRepository->get(get_class());
             };
         } else {
-            // retrieve data, set cache
+            try {
+                $response = $this->httpClient->get('https://api.coinmarketcap.com/v1/ticker/');
+            } catch (Exception $e) {
+                return false;
+            }
+
+            $rawCoins = json_decode($response->getBody()->getContents());
+
+            foreach ($rawCoins as $coin) {
+                $data[$coin->symbol] = $coin;
+            }
+
+            $this->cacheRepository->put(get_class(), $data, 5);
+
+            return true;
         }
     }
 }
