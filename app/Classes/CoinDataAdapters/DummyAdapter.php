@@ -14,7 +14,7 @@ class DummyAdapter extends CoinDataAdapterAbstract
         // fake implementation
     }
 
-    protected function getData()
+    protected function getData(bool $refreshCache = false)
     {
         // fake implementation
     }
