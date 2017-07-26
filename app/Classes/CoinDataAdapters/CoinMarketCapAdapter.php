@@ -19,6 +19,8 @@ class CoinMarketCapAdapter extends CoinDataAdapterAbstract
     public function getPrice(String $coinCode)
     {
         // TODO: Implement getPrice() method.
+
+        $this->cacheLayer();
     }
 
     public function cacheLayer()
@@ -35,7 +37,7 @@ class CoinMarketCapAdapter extends CoinDataAdapterAbstract
 
     public function getData(bool $refreshCache = false)
     {
-        if ($refresh == false) {
+        if ($refreshCache == false) {
             if ($this->cacheLayer()) {
                 // return data from cache
             };
