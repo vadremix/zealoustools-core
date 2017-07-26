@@ -24,7 +24,7 @@ class FakeCoinsSeeder extends Seeder
 
         // add the coin data provider
         DB::table('coin_data_providers')->insert([
-            'name' => 'Dummy'
+            'name' => 'CoinMarketCap',
         ]);
 
         // put the coin names in db
