@@ -3,6 +3,7 @@
 namespace App\Console\Commands;
 
 use App\Classes\CoinDataService;
+use Carbon\Carbon;
 use Illuminate\Console\Command;
 
 class RefreshCoinMarketCap extends Command
@@ -42,7 +43,10 @@ class RefreshCoinMarketCap extends Command
      */
     public function handle()
     {
-        $test = $this->coinDataService->createProvider('CoinMarketCap')->getData(true);
+        if ($this->coinDataService->createProvider('CoinMarketCap')->getData(true)) {
 
+        } else {
+            $this->error(Carbon::now() . ' - There was a problem with refreshing CoinMarketCap data.');
+        };
     }
 }
