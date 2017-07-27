@@ -44,7 +44,9 @@ class RefreshCoinMarketCap extends Command
     public function handle()
     {
         if ($this->coinDataService->createProvider('CoinMarketCap')->getData(true)) {
-
+            if (env('APP_ENV') == 'local') {
+                $this->info(Carbon::now() . ' - Success.');
+            }
         } else {
             $this->error(Carbon::now() . ' - There was a problem with refreshing CoinMarketCap data.');
         };

@@ -26,6 +26,9 @@ class Kernel extends ConsoleKernel
     {
         // $schedule->command('inspire')
         //          ->hourly();
+        $schedule->command('cache:refresh-cmc')
+            ->everyFiveMinutes()
+            ->appendOutputTo(storage_path('logs/refresh-cmc.log'));
     }
 
     /**
