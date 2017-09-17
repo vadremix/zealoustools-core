@@ -29,7 +29,7 @@
                 <div class="col-xs-4 col-sm-3 hero-sub hero-sub-1 hero-sub-1-center">
                     <div class="hero-sub-1-inner">
                         <transition name="fade">
-                            <span v-cloak v-show="mounted">0 BTC</span>
+                            <!--<span v-cloak v-show="mounted">0 BTC</span>-->
                         </transition>
                     </div>
                 </div>
