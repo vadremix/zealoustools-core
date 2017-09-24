@@ -86,16 +86,6 @@
                     this.inputValid = false;
                 }
             },
-
-            trackerWizard: function() {
-                if(this.trackerWizard == 2) {
-                    var refs = this.$refs;
-
-                    Vue.nextTick(function() {
-                        refs.selection.focus();
-                    });
-                }
-            }
         },
 
         methods: {
@@ -118,11 +108,6 @@
                 } else {
                     this.inputDanger = true;
                 }
-            },
-
-            coinLongName: function(coinKey) {
-                // TODO: support multiple short codes (e.g. BTC, BTC2)
-                return coinKey + ' (' + this.coinListCat[coinKey]['codes'][0] + ')';
             },
 
             handleCurrencySelect(item) {
