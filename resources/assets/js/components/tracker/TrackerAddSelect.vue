@@ -30,6 +30,12 @@
             this.prepareOptions();
         },
 
+        watch: {
+            item() {
+                this.$emit('on-change', this.item)
+            }
+        },
+
         methods: {
             prepareOptions() {
                 for (let i = 0; i < this.coinList.length; i++) {

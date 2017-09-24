@@ -13,7 +13,7 @@
                     <div class="tracker-heading text-center">Choose Currency</div>
                     <div class="tracker-body text-center">
                         <form action="javascript:void(0);">
-                            <tracker-add-select :coin-list="coinList"></tracker-add-select>
+                            <tracker-add-select :coin-list="coinList" v-on:on-change="handleCurrencySelect"></tracker-add-select>
                             <div class="tracker-create-button">
                                 <button class="btn btn-info tracker-create" type="submit" @click="stepComplete">Create</button>
                             </div>
@@ -42,6 +42,7 @@
         data: function() {
             return {
                 coinListCat: {},
+                selectedCoinCode: '',
                 inputCoin: '',
                 testKey: '',
                 inputValid: false,
@@ -122,6 +123,10 @@
             coinLongName: function(coinKey) {
                 // TODO: support multiple short codes (e.g. BTC, BTC2)
                 return coinKey + ' (' + this.coinListCat[coinKey]['codes'][0] + ')';
+            },
+
+            handleCurrencySelect(item) {
+                this.selectedCoinCode = item.value;
             }
         }
     }
