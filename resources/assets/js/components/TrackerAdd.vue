@@ -17,7 +17,7 @@
                                     :coin-list="coinList"
                                     :valid="selectedCoinValid"
                                     @on-change="handleCurrencySelect"
-                                    @clear-error="handleClearError"
+                                    @clear-error="handleCurrencyClearError"
                                     >
                             </tracker-add-select>
                             <div class="tracker-create-button">
@@ -88,7 +88,7 @@
                 this.selectedCoinCode = item.value;
             },
 
-            handleClearError(isError) {
+            handleCurrencyClearError(isError) {
                 this.selectedCoinValid = (!isError);
             }
         }
