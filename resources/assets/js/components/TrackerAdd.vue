@@ -68,24 +68,7 @@
 
                     this.coinListCat[coinItem.name]['codes'].push(coinItem.code);
                 }
-            },
-
-            inputCoin: function() {
-                this.inputDanger = false;
-
-                // match until '('
-                var pattern = /([^\(]*)/g;
-                var validationData = pattern.exec(this.inputCoin);
-
-                // remove ' ' that regex would've selected
-                this.testKey = validationData[0].trim();
-
-                if(typeof this.coinListCat[this.testKey] !== 'undefined') {
-                    this.inputValid = true;
-                } else {
-                    this.inputValid = false;
-                }
-            },
+            }
         },
 
         methods: {
