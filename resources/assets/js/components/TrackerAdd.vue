@@ -43,10 +43,7 @@
             return {
                 coinListCat: {},
                 selectedCoinCode: '',
-                inputCoin: '',
-                testKey: '',
-                inputValid: false,
-                inputDanger: false
+                selectedCoinValid: true,
             }
         },
 
@@ -77,20 +74,26 @@
             },
 
             stepComplete: function() {
-                if (this.inputValid == true) {
-                    // TODO: rewrite source selection
-                    for(var key in this.coinListCat[this.testKey]['uids']) {
-                        var uid = key;
+                if (this.validateCurrencySelection()) {
+                    let uid;
+
+                    for (let i = 0; i < this.coinList.length; i++) {
+                        if (this.coinList[i].code === this.selectedCoinCode) {
+                            uid = this.coinList[i].uid;
+                        }
                     }
 
                     this.$emit('wizard-update', 1);
-                    // TODO: rewrite code/source selection
                     this.$emit('create-tracker', uid);
 
-                    this.inputCoin = '';
-                } else {
-                    this.inputDanger = true;
+                    this.selectedCoinCode = '';
                 }
+            },
+
+            validateCurrencySelection() {
+                this.selectedCoinValid = (this.selectedCoinCode !== '');
+
+                return this.selectedCoinValid;
             },
 
             handleCurrencySelect(item) {
