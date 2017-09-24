@@ -13,10 +13,7 @@
                     <div class="tracker-heading text-center">Choose Currency</div>
                     <div class="tracker-body text-center">
                         <form action="javascript:void(0);">
-                            <input type="text" class="tracker-coin" :class="{ 'input-danger': inputDanger}" v-model="inputCoin" placeholder="Select currency..." list="coins" ref="selection" autofocus>
-                            <datalist id="coins">
-                                <option v-for="(coin, coinName) in coinListCat">{{ coinLongName(coinName) }}</option>
-                            </datalist>
+                            <tracker-add-select :coin-list="coinList"></tracker-add-select>
                             <div class="tracker-create-button">
                                 <button class="btn btn-info tracker-create" type="submit" @click="stepComplete">Create</button>
                             </div>
@@ -37,6 +34,8 @@
 </template>
 
 <script>
+    import { default as TrackerAddSelect } from './tracker/TrackerAddSelect.vue'
+
     export default {
         props: ['trackerWizard', 'coinList'],
 
@@ -48,6 +47,10 @@
                 inputValid: false,
                 inputDanger: false
             }
+        },
+
+        components: {
+            TrackerAddSelect
         },
 
         watch: {
