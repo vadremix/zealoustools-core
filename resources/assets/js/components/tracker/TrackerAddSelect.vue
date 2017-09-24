@@ -1,8 +1,10 @@
 <template>
     <basic-select :options="options"
                   :selected-option="item"
+                  :is-error="isError"
                   placeholder="select currency"
-                  @select="onSelect">
+                  @select="onSelect"
+                  @click.native="clearError">
     </basic-select>
 </template>
 
@@ -10,7 +12,7 @@
     import { BasicSelect } from 'vue-search-select'
 
     export default {
-        props: ['coinList'],
+        props: ['coinList', 'valid'],
         components: {
             BasicSelect
         },
@@ -22,7 +24,8 @@
                 item: {
                     value: '',
                     text: ''
-                }
+                },
+                isError: false
             }
         },
 
@@ -33,6 +36,12 @@
         watch: {
             item() {
                 this.$emit('on-change', this.item)
+            },
+
+            valid() {
+                if (this.valid === false) {
+                    this.isError = true;
+                }
             }
         },
 
@@ -56,6 +65,11 @@
 
             selectOption() {
                 this.item = this.options[0]
+            },
+
+            clearError() {
+                this.isError = false;
+                this.$emit('clear-error', this.isError);
             }
         }
     }

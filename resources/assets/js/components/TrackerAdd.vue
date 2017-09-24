@@ -13,7 +13,13 @@
                     <div class="tracker-heading text-center">Choose Currency</div>
                     <div class="tracker-body text-center">
                         <form action="javascript:void(0);">
-                            <tracker-add-select :coin-list="coinList" v-on:on-change="handleCurrencySelect"></tracker-add-select>
+                            <tracker-add-select
+                                    :coin-list="coinList"
+                                    :valid="selectedCoinValid"
+                                    @on-change="handleCurrencySelect"
+                                    @clear-error="handleClearError"
+                                    >
+                            </tracker-add-select>
                             <div class="tracker-create-button">
                                 <button class="btn btn-info tracker-create" type="submit" @click="stepComplete">Create</button>
                             </div>
@@ -80,6 +86,10 @@
 
             handleCurrencySelect(item) {
                 this.selectedCoinCode = item.value;
+            },
+
+            handleClearError(isError) {
+                this.selectedCoinValid = (!isError);
             }
         }
     }
