@@ -8,6 +8,23 @@
     </basic-select>
 </template>
 
+<style>
+    div .ui.selection.search.dropdown, div .ui.selection.dropdown:hover {
+        margin: 20px auto;
+        border: none;
+        border-radius: 2px;
+        width: 90%;
+    }
+
+    div .search, div .text {
+        margin: 0;
+    }
+
+    div .item {
+        margin: 0;
+    }
+</style>
+
 <script>
     import { BasicSelect } from 'vue-search-select'
 
